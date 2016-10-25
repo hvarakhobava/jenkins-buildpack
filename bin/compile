@@ -33,7 +33,7 @@ popd
 
 status "Repacking jenkins.war."
 pushd $build_dir
-  zip -q -r tfaas.war *
+  zip -0 -q -r tfaas.war *
 popd
 
 # Update the PATH
