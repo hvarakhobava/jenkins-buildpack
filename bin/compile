@@ -22,7 +22,8 @@ source $bp_dir/bin/common.sh
 
 mkdir -p $vendor_dir
 
-if [ -f $id_rsa_file ] then
+if [ -f $id_rsa_file ];
+then
   status "Copying ssh keys."
   mkdir -p $ssh_dir
   cp $id_rsa_file $ssh_dir
