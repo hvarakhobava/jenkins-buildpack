@@ -1,6 +1,6 @@
 # copying id_rsa to .ssh
 
-ssh_dir=~/.ssh
+ssh_dir=/home/vcap/.ssh
 echo "SSH direcotry - $ssh_dir"
 id_rsa_file=~/WEB-INF/classes/keys/id_rsa
 echo "Id RSA - $id_rsa_file"
