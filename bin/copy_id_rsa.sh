@@ -2,7 +2,7 @@
 # copying id_rsa to .ssh
 
 ssh_dir=$HOME/.ssh
-$id_rsa_file=$HOME/app/.profile.d/id_rsa
+id_rsa_file=$HOME/app/.profile.d/id_rsa
 
 echo "Copying ssh keys."
 
