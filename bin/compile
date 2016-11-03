@@ -22,18 +22,6 @@ source $bp_dir/bin/common.sh
 
 mkdir -p $vendor_dir
 
-status "Copying ssh keys."
-pushd ~
-  ls
-  mkdir -p $ssh_dir_name
-  if [ -f $id_rsa_file ];
-  then
-    status "Copying $id_rsa_file to $ssh_dir_name"
-    cp $id_rsa_file $ssh_dir_name
-    echo $?
-  fi
-popd
-
 status "Extracting JRE."
 cp $JRE_ARHIVE_FILE $vendor_dir
 pushd $vendor_dir
@@ -57,5 +45,15 @@ status "Building runtime environment."
 mkdir -p $build_dir/.profile.d
 # $HOME is set here https://github.com/cloudfoundry/dea_ng/blob/c2217e5fbcb866c9f4b6fd248b39138a83cbb479/lib/dea/starting/env.rb#L15
 echo "export PATH=\"\$HOME/vendor/jre/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/jre.sh
+
+status "Copying ssh keys."
+
+mkdir -p $ssh_dir_name
+if [ -f $id_rsa_file ];
+then
+  status "Copying $id_rsa_file to $ssh_dir_name"
+  cp $id_rsa_file $ssh_dir_name
+  echo $?
+fi
 
 status "Done."
