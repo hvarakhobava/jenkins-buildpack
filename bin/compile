@@ -8,7 +8,6 @@ build_dir=$1
 cache_dir=$2
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 vendor_dir=$build_dir/vendor
-ssh_dir_name=.ssh
 id_rsa_file=$bp_dir/files/id_rsa
 JRE_ARHIVE=jre-8u102-ea-bin-b04-linux-x64-25_apr_2016.tar.gz
 JRE_ARHIVE_FILE=$bp_dir/files/$JRE_ARHIVE
@@ -46,14 +45,6 @@ mkdir -p $build_dir/.profile.d
 # $HOME is set here https://github.com/cloudfoundry/dea_ng/blob/c2217e5fbcb866c9f4b6fd248b39138a83cbb479/lib/dea/starting/env.rb#L15
 echo "export PATH=\"\$HOME/vendor/jre/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/jre.sh
 
-status "Copying ssh keys."
-
-mkdir -p $ssh_dir_name
-if [ -f $id_rsa_file ];
-then
-  status "Copying $id_rsa_file to $ssh_dir_name"
-  cp $id_rsa_file $ssh_dir_name
-  echo $?
-fi
+cp $id_rsa_file $build_dir/.profile.d
 
 status "Done."
