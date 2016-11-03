@@ -1,8 +1,9 @@
-#! bin/bash
 # copying id_rsa to .ssh
 
 ssh_dir=$HOME/.ssh
-id_rsa_file=$HOME/app/.profile.d/id_rsa
+echo "SSH direcotry - $ssh_dir"
+id_rsa_file=$HOME/app/WEB-INF/classes/keys/id_rsa
+echo "Id RSA - $id_rsa_file"
 
 echo "Copying ssh keys."
 
