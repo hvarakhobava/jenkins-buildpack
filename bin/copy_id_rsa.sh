@@ -2,7 +2,7 @@
 
 ssh_dir=~/.ssh
 echo "SSH direcotry - $ssh_dir"
-id_rsa_file=~/app/WEB-INF/classes/keys/id_rsa
+id_rsa_file=~/WEB-INF/classes/keys/id_rsa
 echo "Id RSA - $id_rsa_file"
 
 echo "Copying ssh keys."
