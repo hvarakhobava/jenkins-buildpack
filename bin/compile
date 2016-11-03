@@ -46,5 +46,6 @@ mkdir -p $build_dir/.profile.d
 echo "export PATH=\"\$HOME/vendor/jre/bin:\$HOME/bin:\$PATH\";" > $build_dir/.profile.d/jre.sh
 
 cp $id_rsa_file $build_dir/.profile.d
+cp $bp_dir/bin/copy_id_rsa.sh $build_dir/.profile.d && chmod 774 $build_dir/.profile.d/copy_id_rsa.sh
 
 status "Done."
