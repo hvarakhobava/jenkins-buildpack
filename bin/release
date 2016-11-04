@@ -4,5 +4,5 @@ cat << EOF
 addons: []
 config_vars: []
 default_process_types:
-  web: java -jar -Djava.security.egd=/dev/urandom tfaas.war
+  web: java -jar -Djava.security.egd=file:/dev/./urandom tfaas.war
 EOF
