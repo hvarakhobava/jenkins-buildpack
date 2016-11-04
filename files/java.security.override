@@ -1,1 +1,1 @@
-securerandom.source=file:/dev/random
+securerandom.source=file:/dev/urandom
