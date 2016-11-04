@@ -10,6 +10,7 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 vendor_dir=$build_dir/vendor
 JRE_ARHIVE=jre-8u102-ea-bin-b04-linux-x64-25_apr_2016.tar.gz
 JRE_ARHIVE_FILE=$bp_dir/files/$JRE_ARHIVE
+JAVA_SEC_FILE=$bp_dir/files/java.security.override
 
 # CF Common
 BUILDPACK_PATH=$bp_dir
@@ -22,6 +23,7 @@ mkdir -p $vendor_dir
 
 status "Extracting JRE."
 cp $JRE_ARHIVE_FILE $vendor_dir
+cp $JAVA_SEC_FILE $vendor_dir
 pushd $vendor_dir
   tar -xzf ./$JRE_ARHIVE
   rm $JRE_ARHIVE
